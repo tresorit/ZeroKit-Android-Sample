@@ -24,7 +24,7 @@
 
         <meta-data
             android:name="com.tresorit.zerokitsdk.API_ROOT"
-            android:value="https://host-{hostid}.api.tresorit.io/tenant-{tenantid}"/>
+            android:value="{tenantBaseAddress}"/>
 
     </application>
 
