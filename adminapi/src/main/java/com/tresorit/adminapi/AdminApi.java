@@ -54,8 +54,6 @@ public class AdminApi {
         this.adminKey = adminKey;
         this.apiRoot = apiRoot;
 
-        this.path = apiRoot.substring(apiRoot.indexOf("/", "https://host".length()) + 1);
-
         handler = new Handler(Looper.getMainLooper());
     }
 
@@ -65,8 +63,6 @@ public class AdminApi {
     final String adminKey;
     @SuppressWarnings("WeakerAccess")
     final String apiRoot;
-    @SuppressWarnings("WeakerAccess")
-    final String path;
 
     private final Handler handler;
 
@@ -277,7 +273,7 @@ public class AdminApi {
                     boolean hasBody = body != null;
                     byte[] contentBytes = hasBody ? string_to_bytes(body) : null;
 
-                    Map<String, String> headers = adminPostAuth(adminUId, adminKey, path + "/" + url, contentBytes);
+                    Map<String, String> headers = adminPostAuth(adminUId, adminKey, url, contentBytes);
 
 
                     urlConnection = (HttpURLConnection) new URL(apiRoot + "/" + url).openConnection();
