@@ -22,7 +22,7 @@ allprojects {
         versionCode = 1
         versionName = "1.0"
         appcompatVersion = "25.3.1"
-        sdkVersion = "4.1.0@aar"
+        sdkVersion = "4.1.1"
     }
 }
 
