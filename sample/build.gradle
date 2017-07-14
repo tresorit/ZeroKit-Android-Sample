@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
 
+def props = new Properties()
+props.load(file("src/main/zerokit.properties").newDataInputStream())
+
 android {
 
     compileSdkVersion project.properties.compileSdkVersion
@@ -22,6 +25,14 @@ android {
     dataBinding {
         enabled = true
     }
+
+    buildTypes {
+        all{
+            buildConfigField "String", "CLIENT_ID", "\"" +props.getProperty("clientid") + "\""
+            buildConfigField "String", "APP_BACKEND", "\"" +props.getProperty("appbackend") + "\""
+            manifestPlaceholders = [BASE_URL: props.getProperty("apiroot")]
+        }
+    }
 }
 
 dependencies {
@@ -42,5 +53,5 @@ dependencies {
     })
 
     compile "com.tresorit.zerokit:zerokit:$sdkVersion"
-    compile project(path: ':adminapi')
+    implementation project(':adminapi')
 }
