@@ -1,3 +1,6 @@
+**Notice:** This project is discontinued and no longer maintained nor supported by Tresorit. This repository only exists for archival purposes.
+***
+
 # ZeroKit SDK Sample for Android
 This repository is only contains a sample app that demonstrates the usage of the **Zerokit Android SDK**.
 Please follow this link to the main repository: **[Zerokit Android SDK](https://github.com/tresorit/ZeroKit-Android-SDK)**
